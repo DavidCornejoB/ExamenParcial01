@@ -93,6 +93,7 @@ public class VentanaPrincipal extends JFrame {
         this.menuList.get(3).add(this.menuItemList.get(6));
 
         for (int i = 0; i < this.menuItemList.size(); i++) {
+            System.out.println("hola");
             //this.menuItemList.get(i).addActionListener(new EventoVentanaInicial(this));
         }
     }
