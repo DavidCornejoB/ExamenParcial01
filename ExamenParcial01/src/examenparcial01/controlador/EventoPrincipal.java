@@ -5,6 +5,7 @@
  */
 package examenparcial01.controlador;
 
+import examenparcial01.vista.VentanaFestival;
 import examenparcial01.vista.VentanaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,8 +21,23 @@ public class EventoPrincipal implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(vPrincipal.getMenuItemList().get(0))){
+            VentanaFestival vFestival = new VentanaFestival();
+        }
+        
+        if(e.getSource().equals(vPrincipal.getMenuItemList().get(1))){
             
         }
+        
+        if(e.getSource().equals(vPrincipal.getMenuItemList().get(2))){
+            
+        }
+        
+        if(e.getSource().equals(vPrincipal.getMenuItemList().get(3))){
+            
+        }
+        
+        
+        
     }
     
 }
