@@ -76,21 +76,18 @@ public class VentanaPrincipal extends JFrame {
         this.menuItemList = new ArrayList<JMenuItem>();
         this.menuItemList.add(new JMenuItem("Agregar Festival"));
         this.menuItemList.add(new JMenuItem("Agregar Asistente"));
-        this.menuItemList.add(new JMenuItem("Agregar Artista"));
         this.menuItemList.add(new JMenuItem("Asignacion de Boleto"));
-        
+        this.menuItemList.add(new JMenuItem("Agregar Artista"));
+
         this.setContentPane(this.escritorio);
         this.setJMenuBar(barraMenu);
         for (int i = 0; i < this.menuList.size(); i++) {
             barraMenu.add(this.menuList.get(i));
         }
         this.menuList.get(0).add(this.menuItemList.get(0));
-        this.menuList.get(0).add(this.menuItemList.get(1));
-        this.menuList.get(0).add(this.menuItemList.get(2));
-        this.menuList.get(1).add(this.menuItemList.get(3));
-        this.menuList.get(2).add(this.menuItemList.get(4));
-        this.menuList.get(3).add(this.menuItemList.get(5));
-        this.menuList.get(3).add(this.menuItemList.get(6));
+        this.menuList.get(1).add(this.menuItemList.get(1));
+        this.menuList.get(2).add(this.menuItemList.get(2));
+        this.menuList.get(3).add(this.menuItemList.get(3));
 
         for (int i = 0; i < this.menuItemList.size(); i++) {
             System.out.println("hola");
