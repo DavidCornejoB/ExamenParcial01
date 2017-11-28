@@ -9,22 +9,19 @@ package examenparcial01.modelo;
  *
  * @author User
  */
-class Asistente {
-    private Persona datos;
+class Asistente extends Persona {
+    
     private Boleto datosB;
 
-    public Asistente(Persona datos, Boleto datosB) {
-        this.datos = datos;
+    public Asistente(Boleto datosB, String nombre, String apellido, String fechaNac) {
+        super(nombre, apellido, fechaNac);
         this.datosB = datosB;
     }
 
-    public Persona getDatos() {
-        return datos;
-    }
+   
 
-    public void setDatos(Persona datos) {
-        this.datos = datos;
-    }
+    
+   
 
     public Boleto getDatosB() {
         return datosB;
@@ -34,10 +31,7 @@ class Asistente {
         this.datosB = datosB;
     }
 
-    @Override
-    public String toString() {
-        return "Asistente{" + "datos=" + datos + ", datosB=" + datosB + '}';
-    }
     
+   
     
 }

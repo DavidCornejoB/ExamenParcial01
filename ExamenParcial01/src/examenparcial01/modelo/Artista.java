@@ -9,13 +9,16 @@ package examenparcial01.modelo;
  *
  * @author User
  */
-class Artista {
+class Artista extends Persona {
     
     private Persona datos;
 
-    public Artista(Persona datos) {
+    public Artista(Persona datos, String nombre, String apellido, String fechaNac) {
+        super(nombre, apellido, fechaNac);
         this.datos = datos;
     }
+
+   
 
     public Persona getDatos() {
         return datos;
