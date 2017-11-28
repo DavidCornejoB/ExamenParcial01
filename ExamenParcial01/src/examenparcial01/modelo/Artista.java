@@ -9,13 +9,12 @@ package examenparcial01.modelo;
  *
  * @author User
  */
-class Asistente {
+class Artista {
+    
     private Persona datos;
-    private Boleto datosB;
 
-    public Asistente(Persona datos, Boleto datosB) {
+    public Artista(Persona datos) {
         this.datos = datos;
-        this.datosB = datosB;
     }
 
     public Persona getDatos() {
@@ -26,17 +25,9 @@ class Asistente {
         this.datos = datos;
     }
 
-    public Boleto getDatosB() {
-        return datosB;
-    }
-
-    public void setDatosB(Boleto datosB) {
-        this.datosB = datosB;
-    }
-
     @Override
     public String toString() {
-        return "Asistente{" + "datos=" + datos + ", datosB=" + datosB + '}';
+        return "Artista{" + "datos=" + datos + '}';
     }
     
     
