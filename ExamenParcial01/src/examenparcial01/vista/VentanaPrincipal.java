@@ -1,5 +1,6 @@
 package examenparcial01.vista;
 
+import examenparcial01.controlador.EventoPrincipal;
 import examenparcial01.controlador.GestionDato;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,7 @@ public class VentanaPrincipal extends JFrame {
         this.menuItemList.add(new JMenuItem("Agregar Asistente"));
         this.menuItemList.add(new JMenuItem("Agregar Artista"));
         this.menuItemList.add(new JMenuItem("Asignacion de Boleto"));
-
+        this.menuItemList.add(new JMenuItem("Presentacion de Artista"));
 
         this.setContentPane(this.escritorio);
         this.setJMenuBar(barraMenu);
@@ -89,10 +90,10 @@ public class VentanaPrincipal extends JFrame {
         this.menuList.get(1).add(this.menuItemList.get(1));
         this.menuList.get(2).add(this.menuItemList.get(2));
         this.menuList.get(3).add(this.menuItemList.get(3));
+        this.menuList.get(2).add(this.menuItemList.get(4));
 
         for (int i = 0; i < this.menuItemList.size(); i++) {
-            System.out.println("hola");
-            //this.menuItemList.get(i).addActionListener(new EventoVentanaInicial(this));
+            this.menuItemList.get(i).addActionListener(new EventoPrincipal(this));
         }
     }
 

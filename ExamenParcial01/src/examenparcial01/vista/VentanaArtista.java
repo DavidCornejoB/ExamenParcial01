@@ -30,8 +30,8 @@ public class VentanaArtista extends JInternalFrame {
 
     public VentanaArtista(String title, GestionDato gD) {
         super(title, true, true, true, true);
-        this.setSize(500, 410);
-        this.setLocation(200, 70);
+        this.setSize(500, 330);
+        this.setLocation(200, 315);
         this.gD = gD;
         this.iniciaComponente();
     }
@@ -124,7 +124,7 @@ public class VentanaArtista extends JInternalFrame {
         this.labelList = new ArrayList<JLabel>();
         this.labelList.add(new JLabel("Nombre"));
         this.labelList.add(new JLabel("Apellido"));
-        this.labelList.add(new JLabel("Posicion"));
+        this.labelList.add(new JLabel("Fecha de nacimiento"));
         this.labelList.add(new JLabel("Agregar Artista"));
 
         this.textoList = new ArrayList<JTextField>();
@@ -157,13 +157,10 @@ public class VentanaArtista extends JInternalFrame {
         panelNorte.add(panelIngreso, BorderLayout.CENTER);
 
         //Tabla 
-        this.encabezado = new Object[6];
-        this.encabezado[0] = "Codigo";
-        this.encabezado[1] = "Cédula";
-        this.encabezado[2] = "Nombre";
-        this.encabezado[3] = "Apellido";
-        this.encabezado[4] = "Fecha Nacimiento";
-        this.encabezado[5] = "Titulo";
+        this.encabezado = new Object[3];
+        this.encabezado[0] = "Nombre";
+        this.encabezado[1] = "Apellido";
+        this.encabezado[2] = "Fecha de Nacimiento";
 
         //this.datos = cargarDatos(this.gD.getRectorList().size(), this.encabezado.length);
         this.modeloTabla = new DefaultTableModel(this.datos, this.encabezado);

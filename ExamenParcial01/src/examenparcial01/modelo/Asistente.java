@@ -13,15 +13,10 @@ class Asistente extends Persona {
     
     private Boleto datosB;
 
-    public Asistente(Boleto datosB, String nombre, String apellido, String fechaNac) {
+    public Asistente(String nombre, String apellido, String fechaNac, Boleto datosB) {
         super(nombre, apellido, fechaNac);
         this.datosB = datosB;
     }
-
-   
-
-    
-   
 
     public Boleto getDatosB() {
         return datosB;
