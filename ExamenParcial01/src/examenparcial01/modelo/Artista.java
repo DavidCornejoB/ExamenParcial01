@@ -10,28 +10,11 @@ package examenparcial01.modelo;
  * @author User
  */
 class Artista extends Persona {
-    
-    private Persona datos;
 
-    public Artista(Persona datos, String nombre, String apellido, String fechaNac) {
+    public Artista(String nombre, String apellido, String fechaNac) {
         super(nombre, apellido, fechaNac);
-        this.datos = datos;
     }
-
+    
    
-
-    public Persona getDatos() {
-        return datos;
-    }
-
-    public void setDatos(Persona datos) {
-        this.datos = datos;
-    }
-
-    @Override
-    public String toString() {
-        return "Artista{" + "datos=" + datos + '}';
-    }
-    
-    
+ 
 }

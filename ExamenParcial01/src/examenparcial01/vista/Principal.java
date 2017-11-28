@@ -8,6 +8,8 @@ public class Principal {
         GestionDato gD=new GestionDato();
         
         VentanaPrincipal ventana=new VentanaPrincipal("Festival", gD);
+        
+       
     }
     
 }
