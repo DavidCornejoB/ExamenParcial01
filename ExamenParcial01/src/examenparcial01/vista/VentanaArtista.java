@@ -1,6 +1,8 @@
 package examenparcial01.vista;
 
+import examenparcial01.controlador.EventoArtista;
 import examenparcial01.controlador.GestionDato;
+import examenparcial01.modelo.Artista;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -134,7 +136,7 @@ public class VentanaArtista extends JInternalFrame {
 
         this.botonList = new ArrayList<JButton>();
         this.botonList.add(new JButton("Guardar"));
-        this.botonList.add(new JButton("Limpiar"));
+        this.botonList.add(new JButton("Salir"));
         for (int i = 0; i < this.botonList.size(); i++) {
             //this.botonList.get(i).addActionListener(new EventoRector(this));
         }
@@ -162,15 +164,30 @@ public class VentanaArtista extends JInternalFrame {
         this.encabezado[1] = "Apellido";
         this.encabezado[2] = "Fecha de Nacimiento";
 
-        //this.datos = cargarDatos(this.gD.getRectorList().size(), this.encabezado.length);
+        this.datos = cargarDatos(this.gD.getArtistaList().size(), this.encabezado.length);
         this.modeloTabla = new DefaultTableModel(this.datos, this.encabezado);
         this.tabla = new JTable(this.modeloTabla);
         this.scroll = new JScrollPane(this.tabla);
 
         this.panelInicial.add(panelNorte, BorderLayout.NORTH);
         this.panelInicial.add(this.scroll, BorderLayout.CENTER);
-
+        
+        this.botonList.get(0).addActionListener(new EventoArtista(this));
+        this.botonList.get(1).addActionListener(new EventoArtista(this));
+        
         this.add(this.panelInicial);
     }
-
+    
+    public Object[][] cargarDatos(int f, int c) {
+        Object[][] retorno = new Object[f][c];
+        int i=0;
+        for(Artista a: this.gD.getArtistaList()){
+            retorno[i][0]=a.getNombre();
+            retorno[i][1]=a.getApellido();
+            retorno[i][2]=a.getFechaNac();
+            i++;
+        }
+        return retorno;
+    }
+    
 }
