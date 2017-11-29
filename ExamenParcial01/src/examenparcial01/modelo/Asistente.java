@@ -11,18 +11,7 @@ package examenparcial01.modelo;
  */
 public class Asistente extends Persona{
     
-    private Boleto datosB;
-
-    public Asistente(String nombre, String apellido, String fechaNac, Boleto datosB) {
+    public Asistente(String nombre, String apellido, String fechaNac) {
         super(nombre, apellido, fechaNac);
-        this.datosB = datosB;
-    }
-
-    public Boleto getDatosB() {
-        return datosB;
-    }
-
-    public void setDatosB(Boleto datosB) {
-        this.datosB = datosB;
     }
 }
