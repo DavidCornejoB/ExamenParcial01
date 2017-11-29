@@ -1,6 +1,7 @@
 package examenparcial01.vista;
 
 import examenparcial01.controlador.GestionDato;
+import examenparcial01.modelo.Boleto;
 import examenparcial01.modelo.Festival;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -210,7 +211,13 @@ public class VentanaBoleto extends JInternalFrame {
 
     public Object[][] cargarDatos(int f, int c) {
         Object[][] retorno = new Object[f][c];
-
+        int i = 0;
+        for(Boleto b: this.gD.getBoletoList()){
+            retorno[i][0]= b.getnAsiento();
+            retorno[i][0]= b.getCosto();
+            retorno[i][0]= b.getAsis();
+            retorno[i][0]= b.getFest().getNombre();
+        }
         return retorno;
     }
 
