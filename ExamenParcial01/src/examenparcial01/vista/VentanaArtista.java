@@ -136,7 +136,7 @@ public class VentanaArtista extends JInternalFrame {
 
         this.botonList = new ArrayList<JButton>();
         this.botonList.add(new JButton("Guardar"));
-        this.botonList.add(new JButton("Salir"));
+        this.botonList.add(new JButton("Limpiar"));
         for (int i = 0; i < this.botonList.size(); i++) {
             //this.botonList.get(i).addActionListener(new EventoRector(this));
         }

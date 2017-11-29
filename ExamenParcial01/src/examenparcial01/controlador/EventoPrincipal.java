@@ -17,7 +17,6 @@ public class EventoPrincipal implements ActionListener{
         this.ventanaPrincipal = ventanaPrincipal;
     }
     
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(ventanaPrincipal.getMenuItemList().get(0))){
@@ -39,18 +38,16 @@ public class EventoPrincipal implements ActionListener{
         }
         
         if(e.getSource().equals(ventanaPrincipal.getMenuItemList().get(3))){
-            VentanaBoleto ventana=new VentanaBoleto("Boleto-Asistente", this.ventanaPrincipal.getgD());
-            ventana.setVisible(true);
-            this.ventanaPrincipal.getEscritorio().add(ventana);
-        }
-        if(e.getSource().equals(ventanaPrincipal.getMenuItemList().get(4))){
             VentanaPresentacion ventana=new VentanaPresentacion("Presentacion Artista", this.ventanaPrincipal.getgD());
             ventana.setVisible(true);
             this.ventanaPrincipal.getEscritorio().add(ventana);
         }
         
-        
-        
+        if(e.getSource().equals(ventanaPrincipal.getMenuItemList().get(4))){
+            VentanaBoleto ventana=new VentanaBoleto("Boleto-Asistente", this.ventanaPrincipal.getgD());
+            ventana.setVisible(true);
+            this.ventanaPrincipal.getEscritorio().add(ventana);
+        }
     }
     
 }

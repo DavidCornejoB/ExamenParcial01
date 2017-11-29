@@ -160,7 +160,7 @@ public class VentanaPresentacion extends JInternalFrame {
         this.comboList = new ArrayList<JComboBox>();
         this.comboList.add(new JComboBox());
         this.comboList.add(new JComboBox());
-        LayoutManager disDatos = new GridLayout(5, 2);
+        LayoutManager disDatos = new GridLayout(4, 2);
         LayoutManager disTitulo = new FlowLayout();
 
         JPanel panelTitulo = new JPanel(disTitulo);

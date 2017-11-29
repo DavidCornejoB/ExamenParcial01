@@ -123,7 +123,6 @@ public class VentanaAsistente extends JInternalFrame{
         this.labelList.add(new JLabel("Nombre"));
         this.labelList.add(new JLabel("Apellido"));
         this.labelList.add(new JLabel("Fecha de Nacimiento"));
-        this.labelList.add(new JLabel(""));
         this.labelList.add(new JLabel("Agregar Asistente"));
 
         this.textoList = new ArrayList<JTextField>();
@@ -139,7 +138,7 @@ public class VentanaAsistente extends JInternalFrame{
         }
 
         JPanel panelTitulo = new JPanel(new FlowLayout());
-        JPanel panelIngreso = new JPanel(new GridLayout(5, 2));
+        JPanel panelIngreso = new JPanel(new GridLayout(4, 2));
 
         panelIngreso.add(this.labelList.get(0));
         panelIngreso.add(this.textoList.get(0));
@@ -147,10 +146,8 @@ public class VentanaAsistente extends JInternalFrame{
         panelIngreso.add(this.textoList.get(1));
         panelIngreso.add(this.labelList.get(2));
         panelIngreso.add(this.textoList.get(2));
-        panelIngreso.add(this.labelList.get(3));
-        panelIngreso.add(this.textoList.get(3));
         
-        panelTitulo.add(this.labelList.get(4));
+        panelTitulo.add(this.labelList.get(3));
         panelIngreso.add(this.botonList.get(0));
         panelIngreso.add(this.botonList.get(1));
 
@@ -158,11 +155,10 @@ public class VentanaAsistente extends JInternalFrame{
         panelNorte.add(panelIngreso, BorderLayout.CENTER);
 
         //Tabla 
-        this.encabezado = new Object[4];
+        this.encabezado = new Object[3];
         this.encabezado[0] = "Nombre";
         this.encabezado[1] = "Apellido";
         this.encabezado[2] = "Fecha de Nacimiento";
-        this.encabezado[3]= "  ";
 
         //this.datos = cargarDatos(this.gD.getRectorList().size(), this.encabezado.length);
         this.modeloTabla = new DefaultTableModel(this.datos, this.encabezado);

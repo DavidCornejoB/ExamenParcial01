@@ -8,6 +8,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -133,8 +134,11 @@ public class VentanaFestival extends JInternalFrame{
         }
 
         this.botonList = new ArrayList<JButton>();
-        this.botonList.add(new JButton("Guardar"));
-        this.botonList.add(new JButton("Salir"));
+        this.botonList.add(new JButton());
+        this.botonList.add(new JButton("Limpiar"));
+        
+        this.botonList.get(0).setIcon(new ImageIcon("C:\\Users\\stali\\Documents\\NetBeansProjects\\ExamenParcial01\\ExamenParcial01\\img\\if_save_173091.png"));
+        
         for (int i = 0; i < this.botonList.size(); i++) {
             //this.botonList.get(i).addActionListener(new EventoFestival(this));
         }
