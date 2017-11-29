@@ -34,6 +34,7 @@ public class EventoFestival implements ActionListener{
                 String fecha  = this.vFestival.getTextoList().get(1).getText();
                 String lugar = this.vFestival.getTextoList().get(2).getText();
                 Festival f = new Festival(nombre, fecha, lugar);
+                
             }
         }
         

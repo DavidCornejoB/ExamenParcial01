@@ -7,9 +7,9 @@ package examenparcial01.modelo;
 
 /**
  *
- * @author User
+ * @author Jorge Pizarro
  */
-class Asistente extends Persona {
+public class Asistente extends Persona{
     
     private Boleto datosB;
 
@@ -25,8 +25,4 @@ class Asistente extends Persona {
     public void setDatosB(Boleto datosB) {
         this.datosB = datosB;
     }
-
-    
-   
-    
 }
