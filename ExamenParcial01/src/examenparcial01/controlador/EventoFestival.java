@@ -39,7 +39,6 @@ public class EventoFestival implements ActionListener{
                 Festival festival = new Festival(nombre, fecha, lugar);
                 if(this.vFestival.getgD().addFestival(festival)){
                     int f = this.vFestival.getgD().getFestivalList().size();
-                    System.out.println(""+f);
                     int c = this.vFestival.getEncabezado().length;
                     Object datos[][] = this.vFestival.cargarDatos(f, c);
                     this.vFestival.getModeloTabla().setDataVector(datos, this.vFestival.getEncabezado());
@@ -47,7 +46,6 @@ public class EventoFestival implements ActionListener{
                     for(int i = 0 ; i < this.vFestival.getTextoList().size() ; i ++){
                         this.vFestival.getTextoList().get(i).setText("");
                     }
-                    
                 }else{
                     JOptionPane.showMessageDialog(null, "Error al guardar Festival!!","Guardar Festival", JOptionPane.ERROR_MESSAGE);
                 }

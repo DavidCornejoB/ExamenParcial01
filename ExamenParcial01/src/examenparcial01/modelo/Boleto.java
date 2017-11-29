@@ -10,6 +10,7 @@ package examenparcial01.modelo;
  * @author User
  */
 public class Boleto {
+    
     private String nAsiento;
     private double costo;
     private Asistente asis;

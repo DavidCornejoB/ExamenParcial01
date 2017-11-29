@@ -1,6 +1,7 @@
 package examenparcial01.vista;
 
 import examenparcial01.controlador.GestionDato;
+import examenparcial01.modelo.Festival;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -215,6 +216,8 @@ public class VentanaBoleto extends JInternalFrame {
 
     public void cargarCombo() {
         this.combo.removeAllItems();
-
+        for(Festival f : this.gD.getFestivalList()){
+            this.combo.addItem(f.getNombre()+"-"+f.getLugar()+"("+f.getFecha()+")");
+        }
     }
 }

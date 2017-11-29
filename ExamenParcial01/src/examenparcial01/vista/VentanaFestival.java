@@ -162,7 +162,7 @@ public class VentanaFestival extends JInternalFrame{
         this.encabezado[1] = "Fecha";
         this.encabezado[2] = "Lugar";
 
-        //this.datos = cargarDatos(this.gD.getRectorList().size(), this.encabezado.length);
+        this.datos = cargarDatos(this.gD.getFestivalList().size(), this.encabezado.length);
         this.modeloTabla = new DefaultTableModel(this.datos, this.encabezado);
         this.tabla = new JTable(this.modeloTabla);
         this.scroll = new JScrollPane(this.tabla);
