@@ -8,6 +8,7 @@ import examenparcial01.vista.VentanaPresentacion;
 import examenparcial01.vista.VentanaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 
 public class EventoPrincipal implements ActionListener{
     
@@ -23,6 +24,7 @@ public class EventoPrincipal implements ActionListener{
             VentanaFestival vFestival = new VentanaFestival("Festival", this.ventanaPrincipal.getgD());
             vFestival.setVisible(true);
             this.ventanaPrincipal.getEscritorio().add(vFestival);
+             
         }
         
         if(e.getSource().equals(ventanaPrincipal.getMenuItemList().get(1))){
@@ -48,6 +50,10 @@ public class EventoPrincipal implements ActionListener{
             ventana.setVisible(true);
             this.ventanaPrincipal.getEscritorio().add(ventana);
         }
+       
+        
+        
+         
     }
     
 }

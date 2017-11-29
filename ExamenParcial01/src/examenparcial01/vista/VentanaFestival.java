@@ -8,6 +8,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
@@ -29,6 +30,7 @@ public class VentanaFestival extends JInternalFrame{
     private List<JTextField> textoList;
     private List<JButton> botonList;
     private GestionDato gD;
+    private ResourceBundle rB;
     
     public VentanaFestival(String title, GestionDato gD) {
         super(title, true, true, true, true);
@@ -134,7 +136,7 @@ public class VentanaFestival extends JInternalFrame{
         }
 
         this.botonList = new ArrayList<JButton>();
-        this.botonList.add(new JButton());
+        this.botonList.add(new JButton("Guardar"));
         this.botonList.add(new JButton("Limpiar"));
         
         this.botonList.get(0).setIcon(new ImageIcon("C:\\Users\\stali\\Documents\\NetBeansProjects\\ExamenParcial01\\ExamenParcial01\\img\\if_save_173091.png"));
@@ -192,4 +194,18 @@ public class VentanaFestival extends JInternalFrame{
         }
         return retorno;
     }
+    
+     public void addIdioma() {
+        this.labelList.get(0).setText(rB.getString("etiqueta1"));
+        this.labelList.get(1).setText(rB.getString("etiqueta2"));
+        this.labelList.get(2).setText(rB.getString("etiqueta3"));
+        this.labelList.get(3).setText(rB.getString("etiqueta4"));
+        this.botonList.get(0).setText(rB.getString("etiqueta5"));
+        this.botonList.get(1).setText(rB.getString("etiqueta6"));
+        this.encabezado[0]=rB.getString("etiqueta1");
+        this.encabezado[1]=rB.getString("etiqueta2");
+        this.encabezado[2]=rB.getString("etiqueta3");
+        
+        
+     }
 }

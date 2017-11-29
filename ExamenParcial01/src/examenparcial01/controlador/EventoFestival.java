@@ -57,6 +57,7 @@ public class EventoFestival implements ActionListener {
                 this.vFestival.getTextoList().get(i).setText(null);
             }
         }
+        
     }
 
     public boolean validarDatosVacios() {
