@@ -1,6 +1,8 @@
 package examenparcial01.vista;
 
+import examenparcial01.controlador.EventoFestival;
 import examenparcial01.controlador.GestionDato;
+import examenparcial01.modelo.Festival;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -132,7 +134,7 @@ public class VentanaFestival extends JInternalFrame{
 
         this.botonList = new ArrayList<JButton>();
         this.botonList.add(new JButton("Guardar"));
-        this.botonList.add(new JButton("Limpiar"));
+        this.botonList.add(new JButton("Salir"));
         for (int i = 0; i < this.botonList.size(); i++) {
             //this.botonList.get(i).addActionListener(new EventoFestival(this));
         }
@@ -167,14 +169,23 @@ public class VentanaFestival extends JInternalFrame{
 
         this.panelInicial.add(panelNorte, BorderLayout.NORTH);
         this.panelInicial.add(this.scroll, BorderLayout.CENTER);
-
+        
+        this.botonList.get(0).addActionListener(new EventoFestival(this));
+        this.botonList.get(1).addActionListener(new EventoFestival(this));
+        
         this.add(this.panelInicial);
 
     }
 
     public Object[][] cargarDatos(int f, int c) {
         Object[][] retorno = new Object[f][c];
-        
+        int i=0;
+        for(Festival fest: this.gD.getFestivalList()){
+            retorno[i][0]=fest.getNombre();
+            retorno[i][1]=fest.getFecha();
+            retorno[i][2]=fest.getLugar();
+            i++;
+        }
         return retorno;
     }
 }

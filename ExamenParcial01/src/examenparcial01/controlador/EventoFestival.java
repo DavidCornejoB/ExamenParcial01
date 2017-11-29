@@ -9,6 +9,9 @@ import examenparcial01.modelo.Festival;
 import examenparcial01.vista.VentanaFestival;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -33,13 +36,30 @@ public class EventoFestival implements ActionListener{
                 String nombre = this.vFestival.getTextoList().get(0).getText();
                 String fecha  = this.vFestival.getTextoList().get(1).getText();
                 String lugar = this.vFestival.getTextoList().get(2).getText();
-                Festival f = new Festival(nombre, fecha, lugar);
-                
+                Festival festival = new Festival(nombre, fecha, lugar);
+                if(this.vFestival.getgD().addFestival(festival)){
+                    int f = this.vFestival.getgD().getFestivalList().size();
+                    System.out.println(""+f);
+                    int c = this.vFestival.getEncabezado().length;
+                    Object datos[][] = this.vFestival.cargarDatos(f, c);
+                    this.vFestival.getModeloTabla().setDataVector(datos, this.vFestival.getEncabezado());
+                    
+                    for(int i = 0 ; i < this.vFestival.getTextoList().size() ; i ++){
+                        this.vFestival.getTextoList().get(i).setText("");
+                    }
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "Error al guardar Festival!!","Guardar Festival", JOptionPane.ERROR_MESSAGE);
+                }
             }
         }
         
         if(e.getSource().equals(this.vFestival.getBotonList().get(1))){
-            
+            try {
+                this.vFestival.setClosed(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(EventoFestival.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
