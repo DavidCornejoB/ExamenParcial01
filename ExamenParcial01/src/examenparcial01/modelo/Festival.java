@@ -7,10 +7,9 @@ package examenparcial01.modelo;
 
 /**
  *
- * @author User
+ * @author Jorge Pizarro
  */
-class Festival {
-    
+public class Festival {
     private String nombre;
     private String fecha;
     private String lugar;

@@ -35,7 +35,7 @@ public class VentanaBoleto extends JInternalFrame {
     public VentanaBoleto(String title, GestionDato gD) {
         super(title, true, true, true, true);
         this.setSize(400, 320);
-        this.setLocation(906, 20);
+        this.setLocation(875, 350);
         this.gD = gD;
         this.iniciaComponente();
     }
