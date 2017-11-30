@@ -196,12 +196,12 @@ public class VentanaFestival extends JInternalFrame{
     }
     
      public void addIdioma() {
-        this.labelList.get(0).setText(rB.getString("etiqueta1"));
-        this.labelList.get(1).setText(rB.getString("etiqueta2"));
-        this.labelList.get(2).setText(rB.getString("etiqueta3"));
-        this.labelList.get(3).setText(rB.getString("etiqueta4"));
-        this.botonList.get(0).setText(rB.getString("etiqueta5"));
-        this.botonList.get(1).setText(rB.getString("etiqueta6"));
+        this.labelList.get(0).setText(rB.getString("etiquetaTexto1"));
+        this.labelList.get(1).setText(rB.getString("etiquetaTexto2"));
+        this.labelList.get(2).setText(rB.getString("etiquetaTexto3"));
+        this.labelList.get(3).setText(rB.getString("etiquetaTitulo1"));
+        this.botonList.get(0).setText(rB.getString("etiquetaBoton1"));
+        this.botonList.get(1).setText(rB.getString("etiquetaBoton2"));
         this.encabezado[0]=rB.getString("etiqueta1");
         this.encabezado[1]=rB.getString("etiqueta2");
         this.encabezado[2]=rB.getString("etiqueta3");

@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
@@ -33,6 +34,7 @@ public class VentanaBoleto extends JInternalFrame {
     private List<JButton> botonList;
     private JComboBox combo;
     private GestionDato gD;
+    private ResourceBundle rC;
 
     public VentanaBoleto(String title, GestionDato gD) {
         super(title, true, true, true, true);
@@ -158,6 +160,7 @@ public class VentanaBoleto extends JInternalFrame {
         this.botonList = new ArrayList<JButton>();
         this.botonList.add(new JButton("Guardar"));
         this.botonList.add(new JButton("Limpiar"));
+         this.botonList.add(new JButton("Actualizar"));
         for (int i = 0; i < this.botonList.size(); i++) {
             //this.botonList.get(i).addActionListener(new EventoCarrera(this));
         }
@@ -198,12 +201,12 @@ public class VentanaBoleto extends JInternalFrame {
         this.tabla = new JTable(this.modeloTabla);
         this.scroll = new JScrollPane(this.tabla);
 
-        this.boton = new JButton("Actualizar");
+        
         //this.boton.addActionListener(new EventoCarrera(this));
 
         this.panelInicial.add(panelNorte, BorderLayout.NORTH);
         this.panelInicial.add(this.scroll, BorderLayout.CENTER);
-        this.panelInicial.add(this.boton, BorderLayout.SOUTH);
+        this.panelInicial.add(this.botonList.get(2), BorderLayout.SOUTH);
 
         this.add(this.panelInicial);
 
@@ -227,4 +230,20 @@ public class VentanaBoleto extends JInternalFrame {
             this.combo.addItem(f.getNombre()+"-"+f.getLugar()+"("+f.getFecha()+")");
         }
     }
+     
+    public void addIdioma() {
+        this.labelList.get(0).setText(rC.getString("etiquetaTexto14"));
+        this.labelList.get(1).setText(rC.getString("etiquetaTexto15"));
+        this.labelList.get(2).setText(rC.getString("etiquetaTexto16"));
+        this.labelList.get(3).setText(rC.getString("etiquetaTexto17"));
+        this.labelList.get(4).setText(rC.getString("etiquetaTitulo4"));
+        this.botonList.get(0).setText(rC.getString("etiquetaBoton1"));
+        this.botonList.get(1).setText(rC.getString("etiquetaBotona2"));
+        this.botonList.get(2).setText(rC.getString("etiquetaBotona3"));
+        this.encabezado[0]=rC.getString("etiquetaTexto14");
+        this.encabezado[1]=rC.getString("etiquetaTexto15");
+        this.encabezado[2]=rC.getString("etiquetaTexto16");
+        this.encabezado[3]=rC.getString("etiquetaTexto17");
+        
+     }
 }

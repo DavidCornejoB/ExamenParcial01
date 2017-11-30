@@ -8,6 +8,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -29,6 +30,7 @@ public class VentanaArtista extends JInternalFrame {
     private List<JTextField> textoList;
     private List<JButton> botonList;
     private GestionDato gD;
+    private ResourceBundle rD;
 
     public VentanaArtista(String title, GestionDato gD) {
         super(title, true, true, true, true);
@@ -189,5 +191,18 @@ public class VentanaArtista extends JInternalFrame {
         }
         return retorno;
     }
+    
+     public void addIdioma() {
+        this.labelList.get(0).setText(rD.getString("etiquetaTexto5"));
+        this.labelList.get(1).setText(rD.getString("etiquetaTexto6"));
+        this.labelList.get(2).setText(rD.getString("etiquetaTexto7"));
+        this.labelList.get(3).setText(rD.getString("etiquetaTitulo2"));
+        this.botonList.get(0).setText(rD.getString("etiquetaBoton1"));
+        this.botonList.get(1).setText(rD.getString("etiquetaBotona2"));
+        this.encabezado[0]=rD.getString("etiquetaTexto5");
+        this.encabezado[1]=rD.getString("etiquetaTexto6");
+        this.encabezado[2]=rD.getString("etiquetaTexto7");
+        
+     }
     
 }

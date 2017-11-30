@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
@@ -31,6 +32,7 @@ public class VentanaPresentacion extends JInternalFrame {
     private List<JButton> botonList;
     private List<JComboBox> comboList;
     private GestionDato gD;
+    private ResourceBundle rC;
 
     public VentanaPresentacion(String title, GestionDato gD) {
         super(title, true, true, true, true);
@@ -193,12 +195,12 @@ public class VentanaPresentacion extends JInternalFrame {
         this.tabla = new JTable(this.modeloTabla);
         this.scroll = new JScrollPane(this.tabla);
 
-        this.boton = new JButton("Actualizar");
+        this.botonList.add(new JButton("Actualizar"));
         //this.boton.addActionListener(new EventoCarrera(this));
 
         this.panelInicial.add(panelNorte, BorderLayout.NORTH);
         this.panelInicial.add(this.scroll, BorderLayout.CENTER);
-        this.panelInicial.add(this.boton, BorderLayout.SOUTH);
+        this.panelInicial.add(this.botonList.get(2), BorderLayout.SOUTH);
 
         this.add(this.panelInicial);
 
@@ -214,4 +216,21 @@ public class VentanaPresentacion extends JInternalFrame {
         this.comboList.get(0).removeAllItems();
 
     }
+    
+    
+    public void addIdioma() {
+        this.labelList.get(0).setText(rC.getString("etiquetaTexto10"));
+        this.labelList.get(1).setText(rC.getString("etiquetaTexto11"));
+        this.labelList.get(2).setText(rC.getString("etiquetaTexto12"));
+        this.labelList.get(3).setText(rC.getString("etiquetaTitulo3"));
+        this.botonList.get(0).setText(rC.getString("etiquetaBoton1"));
+        this.botonList.get(1).setText(rC.getString("etiquetaBotona2"));
+        this.botonList.get(2).setText(rC.getString("etiquetaBotona3"));
+        this.encabezado[0]=rC.getString("etiquetaTexto10");
+        this.encabezado[1]=rC.getString("etiquetaTexto11");
+        this.encabezado[2]=rC.getString("etiquetaTexto12");
+        
+        
+     }
+    
 }

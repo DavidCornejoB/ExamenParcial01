@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -26,6 +27,7 @@ public class VentanaAsistente extends JInternalFrame{
     private List<JTextField> textoList;
     private List<JButton> botonList;
     private GestionDato gD;
+    private ResourceBundle rC;
     
      public VentanaAsistente(String title, GestionDato gD) {
         super(title, true, true, true, true);
@@ -177,4 +179,18 @@ public class VentanaAsistente extends JInternalFrame{
         
         return retorno;
     }
+    
+    public void addIdioma() {
+        this.labelList.get(0).setText(rC.getString("etiquetaTexto5"));
+        this.labelList.get(1).setText(rC.getString("etiquetaTexto6"));
+        this.labelList.get(2).setText(rC.getString("etiquetaTexto7"));
+        this.labelList.get(3).setText(rC.getString("etiquetaTitulo3"));
+        this.botonList.get(0).setText(rC.getString("etiquetaBoton1"));
+        this.botonList.get(1).setText(rC.getString("etiquetaBotona2"));
+        this.encabezado[0]=rC.getString("etiquetaTexto5");
+        this.encabezado[1]=rC.getString("etiquetaTexto6");
+        this.encabezado[2]=rC.getString("etiquetaTexto7");
+        
+        
+     }
 }
