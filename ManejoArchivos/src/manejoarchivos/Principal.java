@@ -20,14 +20,17 @@ public class Principal {
     public static void main(String[] args) {
         // TODO code application logic here
         List<Persona> personaList = new ArrayList();
-        personaList.add(new Persona (123,"Pablo Malla",19));
-        personaList.add(new Persona (124,"Juan Perez",23));
-        personaList.add(new Persona (123,"Maria Sanchez",27));
+        //personaList.add(new Persona (123,"Pablo Malla",19));
+        //personaList.add(new Persona (124,"David Cornejo",23));
+        //personaList.add(new Persona (123,"Maria Sanchez",27));
         
+       
         
         GestionDato gD= new GestionDato(personaList);
-        gD.persistirPersonaList(personaList);
+        //gD.persistirPersonaList(personaList);
+        personaList=gD.leerPersona();
         
+        System.out.println(personaList.size());
       
         
         

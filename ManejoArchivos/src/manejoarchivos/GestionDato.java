@@ -63,7 +63,7 @@ public class GestionDato {
         return retorno;
     }
     
-   /* public List<Persona> leerPersona(){
+    public List<Persona> leerPersona(){
       
         try {
             FileReader ae= new FileReader("c://raiz//archivoPersona.txt");
@@ -71,13 +71,14 @@ public class GestionDato {
             String linea=escritura.readLine();
             
             while (linea!=null) {  
-                linea= leerPersona().toString();
-                //int c = Integer.parseInt();
-                String n;
-                int e;
+                
+                int c = Integer.valueOf(linea.substring(0, 2)).intValue();
+                String n="";
+                int e=0;
                 
                 Persona p = new Persona(c, n, e);
                 this.personaList.add(p);
+                linea=escritura.readLine();
             }
             escritura.close();
            
@@ -88,7 +89,7 @@ public class GestionDato {
         
         return this.personaList;
     }
-    */
+    
     public boolean addPersona(Persona p){
         return this.addPersona(p);
     } 
