@@ -46,7 +46,7 @@ public class GestionDato {
     public boolean persistirPersonaList(List<Persona> lista){
         boolean retorno=false;
         try {
-            FileWriter ae= new FileWriter("c:/raiz//archivoPersona.txt", true);
+            FileWriter ae= new FileWriter("C:/raiz//archivoPersona.txt", true);
             BufferedWriter escritura= new BufferedWriter(ae);
             for (Persona persona : lista) {
                 escritura.append(persona.toString());
@@ -63,7 +63,7 @@ public class GestionDato {
         return retorno;
     }
     
-    public List<Persona> leerPersona(){
+   /* public List<Persona> leerPersona(){
       
         try {
             FileReader ae= new FileReader("c://raiz//archivoPersona.txt");
@@ -72,7 +72,7 @@ public class GestionDato {
             
             while (linea!=null) {  
                 linea= leerPersona().toString();
-                int c = Integer.parseInt();
+                //int c = Integer.parseInt();
                 String n;
                 int e;
                 
@@ -88,7 +88,7 @@ public class GestionDato {
         
         return this.personaList;
     }
-    
+    */
     public boolean addPersona(Persona p){
         return this.addPersona(p);
     } 
