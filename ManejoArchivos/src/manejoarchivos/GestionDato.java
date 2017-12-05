@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 public class GestionDato {
     private List<Persona> personaList;
     private File datoPersona;
+    private String[] partes;
 
     public GestionDato(List<Persona> personaList) {
         this.personaList = personaList;
@@ -72,9 +73,15 @@ public class GestionDato {
             
             while (linea!=null) {  
                 
-                int c = Integer.valueOf(linea.substring(0, 2)).intValue();
-                String n="";
-                int e=0;
+                partes = linea.split(" | ");
+                String parte1 = partes[0];
+                String parte3 = partes[2];
+                String parte4 = partes[3];
+                String parte6 = partes[5];
+                
+                int c = Integer.parseInt(parte1);
+                String n= parte3 + parte4 ;
+                int e= Integer.parseInt(parte6);
                 
                 Persona p = new Persona(c, n, e);
                 this.personaList.add(p);
