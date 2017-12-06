@@ -20,15 +20,23 @@ public class Principal {
     public static void main(String[] args) {
         // TODO code application logic here
         List<Persona> personaList = new ArrayList();
-        //personaList.add(new Persona (123,"Pablo Malla",19));
-        //personaList.add(new Persona (124,"David Cornejo",23));
-        //personaList.add(new Persona (123,"Maria Sanchez",27));
+        List<Auto> autoList = new ArrayList();
+        personaList.add(new Persona (123,"Pablo Malla",19));
+        personaList.add(new Persona (124,"David Cornejo",23));
+        personaList.add(new Persona (123,"Maria Sanchez",27));
         
-       
+        autoList.add(new Auto("ABC123", "Toyota",personaList.get(0)));
+        autoList.add(new Auto("BCD123", "Chevroleth", personaList.get(1)));
+        autoList.add(new Auto("AWR153", "Mazda", personaList.get(2)));
         
-        GestionDato gD= new GestionDato(personaList);
-        //gD.persistirPersonaList(personaList);
-        personaList=gD.leerPersona();
+        
+     
+        
+        GestionDato gD= new GestionDato(personaList,autoList);
+        gD.persistirPersonaList(personaList);
+       // personaList=gD.leerPersona();
+        
+        gD.persistirArchivoAuto(autoList);
         
         System.out.println(personaList.size());
       

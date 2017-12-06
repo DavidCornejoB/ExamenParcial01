@@ -20,6 +20,9 @@ public class Auto {
         this.duenio = duenio;
     }
 
+     public Auto() {
+    }
+    
     public String getPlaca() {
         return placa;
     }
@@ -46,7 +49,7 @@ public class Auto {
 
     @Override
     public String toString() {
-        return  placa + " | " + marca + " | " + duenio +" | ";
+        return  placa + " | " + marca + " | " + duenio.getNombre() +" | ";
     }
    
    
