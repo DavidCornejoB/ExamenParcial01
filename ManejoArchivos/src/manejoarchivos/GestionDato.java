@@ -7,7 +7,11 @@ package manejoarchivos;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -65,11 +69,14 @@ public class GestionDato {
     public boolean persistirPersonaList(List<Persona> lista){
         boolean retorno=false;
         try {
-            FileWriter ae= new FileWriter("c:/raiz//archivo.txt", true);
-            BufferedWriter escritura= new BufferedWriter(ae);
+            FileOutputStream ae= new FileOutputStream("C:/raiz/archivo.txt", true);
+             DataOutputStream escritura= new DataOutputStream (ae);
+             
             for (Persona persona : lista) {
-                escritura.append(persona.toString());
-                escritura.newLine();
+                
+                escritura.writeByte(persona.getCodigo());
+                escritura.writeUTF(persona.getNombre());
+                escritura.writeByte(persona.getEdad());
             }
             escritura.close();
             retorno=true;
@@ -83,7 +90,7 @@ public class GestionDato {
     }
     public List<Auto> leerAuto() {
         try {
-            FileReader fr = new FileReader("c:/raiz//archivo.txt");
+            FileReader fr = new FileReader("C:/raiz/archivo.txt");
             BufferedReader br = new BufferedReader(fr);
             String linea = br.readLine();
             
@@ -107,37 +114,29 @@ public class GestionDato {
         return this.autoList;
     }
     
-    public List<Persona> leerPersona(){
+    public boolean leerPersona(){
       
         try {
-            FileReader ae= new FileReader("c://raiz//archivo.txt");
-            BufferedReader escritura= new BufferedReader(ae);
-            String linea=escritura.readLine();
+            FileInputStream ae= new FileInputStream("C:/raiz/archivo.txt");
+            DataInputStream escritura= new DataInputStream (ae);
             
-            while (linea!=null) {  
+            while (true) {  
+
                 
-                partes = linea.split(" | ");
-                String parte1 = partes[0];
-                String parte3 = partes[2];
-                String parte4 = partes[3];
-                String parte6 = partes[5];
-                
-                int c = Integer.parseInt(parte1);
-                String n= parte3 + parte4 ;
-                int e= Integer.parseInt(parte6);
+                int c = escritura.readByte();
+                String n= escritura.readUTF();
+                int e= escritura.readByte();
                 
                 Persona p = new Persona(c, n, e);
                 this.personaList.add(p);
-                linea=escritura.readLine();
+
             }
-            escritura.close();
-           
-        } catch (IOException e1) {
-            System.out.println("El Archivo NOOOOhj Existe");
-            
-        }
         
-        return this.personaList;
+        } catch (IOException e1) {
+            JOptionPane.showMessageDialog(null, "Error", "El archivo no existe", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
     }
      public boolean persistirArchivoAuto(List<Auto> lista) {
         try {
