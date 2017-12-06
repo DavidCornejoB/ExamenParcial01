@@ -21,9 +21,9 @@ public class Principal {
         // TODO code application logic here
         List<Persona> personaList = new ArrayList();
         List<Auto> autoList = new ArrayList();
-        personaList.add(new Persona (123,"Pablo Malla",19));
-        personaList.add(new Persona (124,"David Cornejo",23));
-        personaList.add(new Persona (123,"Maria Sanchez",27));
+        personaList.add(new Persona (123,"Pablin Mallin",19));
+        personaList.add(new Persona (124,"Lius Cirnejo",23));
+        personaList.add(new Persona (123,"Sandro Quintunia",27));
         
         autoList.add(new Auto("ABC123", "Toyota",personaList.get(0)));
         autoList.add(new Auto("BCD123", "Chevroleth", personaList.get(1)));
@@ -34,7 +34,7 @@ public class Principal {
         
         GestionDato gD= new GestionDato(personaList,autoList);
         gD.persistirPersonaList(personaList);
-       // personaList=gD.leerPersona();
+        gD.leerPersona();
         
         gD.persistirArchivoAuto(autoList);
         

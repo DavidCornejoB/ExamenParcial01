@@ -88,33 +88,8 @@ public class GestionDato {
         
         return retorno;
     }
-    public List<Auto> leerAuto() {
-        try {
-            FileReader fr = new FileReader("C:/raiz/archivo.txt");
-            BufferedReader br = new BufferedReader(fr);
-            String linea = br.readLine();
-            
-            
-            while(linea!=null){
-               partes=linea.split(" | ");
-                String parte1 = partes[0];
-                String parte3 = partes[2];
-                String parte4 = partes[3];
-                String parte6 = partes[5]; 
-               
-                
-                System.out.println(parte1);
-                
-            } 
-            br.close();
-            
-
-        } catch (IOException ae) {
-        }
-        return this.autoList;
-    }
     
-    public boolean leerPersona(){
+        public boolean leerPersona(){
       
         try {
             FileInputStream ae= new FileInputStream("C:/raiz/archivo.txt");
@@ -138,26 +113,41 @@ public class GestionDato {
         }
 
     }
-     public boolean persistirArchivoAuto(List<Auto> lista) {
+         public boolean persistirArchivoAuto(List<Auto> lista) {
         try {
 
-            FileWriter ae = new FileWriter("c:/raiz//archivo.txt", true);
-
-            BufferedWriter escritura = new BufferedWriter(ae);
+            FileOutputStream ae = new FileOutputStream("C:/raiz/archivo.txt", true);
+            DataOutputStream escritura = new DataOutputStream(ae);
+            
             for (Auto a : this.autoList) {
-                escritura.append(a.toString());
-                escritura.newLine();
+                escritura.writeUTF(a.getPlaca());
+                escritura.writeUTF(a.getMarca());
             }
-            escritura.close();
             return true;
         } catch (IOException e1) {
-             System.out.println("El Archivo NO Existe");
+            JOptionPane.showMessageDialog(null, "Error", "El archivo no existe", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-     }   
+     }
+         
+    public boolean leerAuto() {
+        try {
+            FileInputStream fr = new FileInputStream("C:/raiz/archivo.txt");
+            DataInputStream br = new DataInputStream(fr);
+            
+            while(true){
+                
+                String placa = br.readUTF();
+                String marca = br.readUTF();
+                
+                
+                
+            }         
 
-       
-    
-    
-   
+        } catch (IOException ae) {
+            JOptionPane.showMessageDialog(null, "Error", "El archivo no existe", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
+  
 }
